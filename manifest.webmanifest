@@ -5,8 +5,8 @@
   "theme_color": "#1976d2",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/PEC4-DFEA-PWA-Cperezgr/",
+  "start_url": "/PEC4-DFEA-PWA-Cperezgr/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
