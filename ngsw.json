@@ -1,0 +1,124 @@
+{
+  "configVersion": 1,
+  "timestamp": 1779276924078,
+  "index": "/PEC4-DFEA-PWA-Cperezgr/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/PEC4-DFEA-PWA-Cperezgr/chunk-AWJBIOEP.js",
+        "/PEC4-DFEA-PWA-Cperezgr/chunk-YRMXLQLC.js",
+        "/PEC4-DFEA-PWA-Cperezgr/favicon.ico",
+        "/PEC4-DFEA-PWA-Cperezgr/index.html",
+        "/PEC4-DFEA-PWA-Cperezgr/main-NAA4Q6HK.js",
+        "/PEC4-DFEA-PWA-Cperezgr/manifest.webmanifest",
+        "/PEC4-DFEA-PWA-Cperezgr/styles-VYAMZAOP.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-128x128.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-144x144.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-152x152.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-192x192.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-384x384.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-512x512.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-72x72.png",
+        "/PEC4-DFEA-PWA-Cperezgr/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "mealdb-categories",
+      "patterns": [
+        "https:\\/\\/www\\.themealdb\\.com\\/api\\/json\\/v1\\/1\\/categories\\.php"
+      ],
+      "strategy": "performance",
+      "maxSize": 1,
+      "maxAge": 43200000,
+      "timeoutMs": 3000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "mealdb-meals",
+      "patterns": [
+        "https:\\/\\/www\\.themealdb\\.com\\/api\\/json\\/v1\\/1\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 50,
+      "maxAge": 3600000,
+      "timeoutMs": 3000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "mealdb-images",
+      "patterns": [
+        "https:\\/\\/www\\.themealdb\\.com\\/images\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/PEC4-DFEA-PWA-Cperezgr/chunk-AWJBIOEP.js": "fd50f5b7de569a6a908beadd2d1f409339012d28",
+    "/PEC4-DFEA-PWA-Cperezgr/chunk-YRMXLQLC.js": "4c24cde0c5b13c9d71992b183f00d7a2f47d5e09",
+    "/PEC4-DFEA-PWA-Cperezgr/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/PEC4-DFEA-PWA-Cperezgr/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/PEC4-DFEA-PWA-Cperezgr/index.html": "50552f0cf16d505fc86558a562e309f2a89f190c",
+    "/PEC4-DFEA-PWA-Cperezgr/main-NAA4Q6HK.js": "7363fa8f4a63bd1a9d4660f5d9f0fa3d0b498098",
+    "/PEC4-DFEA-PWA-Cperezgr/manifest.webmanifest": "9e203fb828c45bfc2edc1fc0dac63864899bfa33",
+    "/PEC4-DFEA-PWA-Cperezgr/styles-VYAMZAOP.css": "36317d5df57728b04c13c36ad6a2598344a3d888"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
