@@ -1,0 +1,14 @@
+.category-card {
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  img {
+    height: 160px;
+    object-fit: cover;
+  }
+}

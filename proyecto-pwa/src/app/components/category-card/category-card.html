@@ -1,0 +1,10 @@
+<mat-card
+  class="category-card animate__animated animate__fadeInUp"
+  (click)="cardClick.emit(category.strCategory)"
+>
+  <img mat-card-image [src]="category.strCategoryThumb" [alt]="category.strCategory" />
+  <mat-card-content>
+    <h3>{{ category.strCategory }}</h3>
+    <p>{{ category.strCategoryDescription | slice: 0 : 80 }}...</p>
+  </mat-card-content>
+</mat-card>

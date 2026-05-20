@@ -1,0 +1,29 @@
+<mat-table [dataSource]="dataSource" class="animate__animated animate__fadeIn">
+  <ng-container matColumnDef="image">
+    <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <img
+        [src]="row.strCategoryThumb"
+        [alt]="row.strCategory"
+        style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px"
+      />
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.strCategory }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.strCategoryDescription | slice: 0 : 100 }}...</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="goToDetail(row.strCategory)"
+    style="cursor: pointer"
+  ></mat-row>
+</mat-table>

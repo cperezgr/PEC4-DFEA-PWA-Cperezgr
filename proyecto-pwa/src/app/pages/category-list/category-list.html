@@ -1,0 +1,39 @@
+<div class="page-container">
+  <div class="header">
+    <h1>🍽️ Meal Categories</h1>
+    <div class="view-toggle">
+      <button
+        mat-icon-button
+        [color]="viewMode() === 'cards' ? 'primary' : ''"
+        matTooltip="Cards view"
+        (click)="viewMode.set('cards')"
+      >
+        <mat-icon>grid_view</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        [color]="viewMode() === 'table' ? 'primary' : ''"
+        matTooltip="Table view"
+        (click)="viewMode.set('table')"
+      >
+        <mat-icon>table_rows</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  @if (!loaded()) {
+    <div class="spinner-container">
+      <mat-spinner diameter="60" />
+    </div>
+  } @else {
+    @if (viewMode() === 'cards') {
+      <div class="cards-grid">
+        @for (cat of categories(); track cat.idCategory) {
+          <app-category-card [category]="cat" (cardClick)="goToDetail($event)" />
+        }
+      </div>
+    } @else {
+      <app-category-grid [categories]="categories()" />
+    }
+  }
+</div>

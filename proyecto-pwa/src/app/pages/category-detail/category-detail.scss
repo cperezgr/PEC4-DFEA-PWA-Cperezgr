@@ -1,0 +1,63 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  h1 {
+    margin: 0;
+  }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.meal-thumb {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  span {
+    display: block;
+    font-size: 12px;
+    padding: 4px;
+  }
+  &:hover {
+    transform: scale(1.04);
+  }
+  &.selected {
+    border-color: #1976d2;
+  }
+}
+.recipe-detail {
+  margin-top: 16px;
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+.details-tabs {
+  margin-top: 16px;
+}
+.tab-content {
+  padding: 16px 0;
+}

@@ -1,0 +1,80 @@
+<div class="page-container">
+  <!-- Header: nombre de categoría + botón back -->
+  <div class="detail-header animate__animated animate__fadeIn">
+    <h1>{{ categoryName() }}</h1>
+    <a mat-raised-button color="warn" routerLink="/categories"> ← Back </a>
+  </div>
+
+  <!-- Spinner mientras carga -->
+  @if (!loaded()) {
+    <div class="spinner-container">
+      <mat-spinner diameter="50" />
+    </div>
+  } @else {
+    <!-- Listado de recetas de la categoría -->
+    <div class="meals-grid">
+      @for (meal of meals(); track meal.idMeal) {
+        <div
+          class="meal-thumb animate__animated animate__fadeInUp"
+          (click)="selectMeal(meal)"
+          [class.selected]="selectedMeal()?.idMeal === meal.idMeal"
+        >
+          <img [src]="meal.strMealThumb + '/preview'" [alt]="meal.strMeal" />
+          <span>{{ meal.strMeal }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Detalle de receta seleccionada -->
+    @if (selectedMeal()) {
+      <div class="recipe-detail animate__animated animate__slideInUp">
+        <h2>{{ selectedMeal()!.strMeal }}</h2>
+
+        <!-- Botón show all details -->
+        <button mat-stroked-button color="primary" (click)="showDetails.set(!showDetails())">
+          {{ showDetails() ? 'Hide details' : 'Show all details' }}
+        </button>
+
+        @if (showDetails()) {
+          <!-- Tabs con los detalles: Instrucciones + Ingredientes -->
+          <mat-tab-group class="details-tabs animate__animated animate__fadeIn">
+            <mat-tab label="Instructions">
+              <div class="tab-content">
+                <p>{{ selectedMeal()!.strInstructions }}</p>
+              </div>
+            </mat-tab>
+            <mat-tab label="Ingredients">
+              <div class="tab-content">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Ingredients ({{ selectedMeal()!.ingredients?.length }})
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <ul>
+                    @for (ing of selectedMeal()!.ingredients; track ing.name) {
+                      <li>{{ ing.measure }} {{ ing.name }}</li>
+                    }
+                  </ul>
+                </mat-expansion-panel>
+              </div>
+            </mat-tab>
+            <mat-tab label="Info">
+              <div class="tab-content">
+                <p><strong>Area:</strong> {{ selectedMeal()!.strArea ?? 'Unknown' }}</p>
+                <p><strong>Tags:</strong> {{ selectedMeal()!.strTags ?? 'None' }}</p>
+                @if (selectedMeal()!.strYoutube) {
+                  <p>
+                    <a [href]="selectedMeal()!.strYoutube" target="_blank" mat-stroked-button>
+                      Watch on YouTube
+                    </a>
+                  </p>
+                }
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        }
+      </div>
+    }
+  }
+</div>
